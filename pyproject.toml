@@ -1,0 +1,20 @@
+[project]
+name = "repo-name"
+version = "0.1.0"
+description = "One line on the problem area this repository covers."
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["demos"]
+addopts = "--import-mode=importlib -m 'not live'"
+markers = ["live: needs network or the claude CLI; run with -m live"]
+
+[tool.uv]
+package = false
